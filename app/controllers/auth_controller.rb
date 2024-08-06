@@ -1,4 +1,5 @@
 class AuthController < ApplicationController
+    before_action :block_access, expect: [:destroy]
     def new
         render "new"
     end
@@ -12,5 +13,9 @@ class AuthController < ApplicationController
         else
             render "new"
         end
+    end
+
+    def destroy
+        logout
     end
 end

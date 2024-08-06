@@ -9,3 +9,7 @@
     <strong>Password: </strong>
     <%= @user.password_digest %>
 </p>
+
+<p>
+    <span><%= link_to "Log out", logout_path, method: 'delete' %></span>
+</p>
